@@ -1,0 +1,114 @@
+{
+  "case_studies": [
+    {
+      "name": "shab-calendar",
+      "image": "/assets/cases/shab-calendar.png",
+      "source_image": "https://cdn-images-1.medium.com/max/1024/1*WYbt0Vp0nKAngjQ0UGeXlw.png",
+      "article": "https://medium.com/@erfanzn777/data-driven-optimization-enhancing-conversion-through-strategic-adjustments-1cb665fa8586",
+      "title": "Data-Driven Optimization: Enhancing Conversion Through Strategic Adjustments",
+      "summary": "Combined date and guest selection, fixed back navigation, and focused the calendar on the next 14 days.",
+      "metrics": [
+        [
+          "~6%",
+          "higher booking conversion"
+        ],
+        [
+          "14 days",
+          "focused calendar view"
+        ]
+      ]
+    },
+    {
+      "name": "car-sell",
+      "image": "/assets/cases/car-sell.png",
+      "source_image": "https://cdn-images-1.medium.com/max/1024/1*ZlVmoCfzf3LYX9kGFXH7eQ.png",
+      "article": "https://medium.com/@erfanzn777/case-study-huge-step-in-carsell-funnel-9e5e9c40c94a",
+      "title": "Case Study: Huge Step In Carsell Funnel",
+      "summary": "Clarified the service and rebuilt self-declaration, with simpler vehicle details and practical photo guidance.",
+      "metrics": [
+        [
+          "5% → 68%",
+          "self-declaration completion"
+        ],
+        [
+          "+20%",
+          "successful sales cases / day"
+        ]
+      ]
+    },
+    {
+      "name": "car-assistant",
+      "image": "/assets/cases/car-assistant.png",
+      "source_image": "https://cdn-images-1.medium.com/max/1024/0*a87WN0tMS7IWH5Yd.png",
+      "article": "https://medium.com/@erfanzn777/casestudy-i-dont-know-what-car-i-should-buy-3ec2ad80bbd4",
+      "title": "CaseStudy: ” I don't know what car I should buy”",
+      "summary": "A guided car assistant turned preferences and budget into relevant recommendations and purchase requests.",
+      "metrics": [
+        [
+          "+6%",
+          "custom purchase requests"
+        ],
+        [
+          "−27%",
+          "operating costs"
+        ]
+      ]
+    },
+    {
+      "name": "unstable-market",
+      "image": "/assets/cases/unstable-market.jpg",
+      "source_image": "https://cdn-images-1.medium.com/max/640/1*5CmNjNVFfRWHMOvTYy5FlQ.jpeg",
+      "article": "https://medium.com/@erfanzn777/case-study-optimizing-the-car-purchase-experience-in-a-unstable-car-market-4aa4de474937",
+      "title": "Case Study: Optimizing the Car Purchase Experience in a Unstable Car Market",
+      "summary": "Introduced price offers with acceptance guidance, helping buyers and sellers find common ground in a declining market.",
+      "metrics": [
+        [
+          "~11%",
+          "more completed purchases"
+        ],
+        [
+          "5 → 2 days",
+          "average time to sell"
+        ]
+      ]
+    },
+    {
+      "name": "dynamic-usability",
+      "image": "/assets/cases/dynamic-usability.png",
+      "source_image": "https://cdn-images-1.medium.com/max/1024/1*Y2ryausnPuGThlX0WJiXfQ.png",
+      "article": "https://medium.com/@erfanzn777/case-study-designing-for-dynamic-usability-ef295b169c86",
+      "title": "Case Study: Designing for Dynamic Usability",
+      "summary": "Field research uncovered how swollen fingers affected inspectors. Larger, better-spaced controls addressed the real context of use.",
+      "metrics": [
+        [
+          "0",
+          "rage clicks in follow-up week"
+        ],
+        [
+          "+16 px",
+          "control height and spacing"
+        ]
+      ]
+    },
+    {
+      "name": "installments",
+      "image": "/assets/cases/installments.png",
+      "source_image": "https://cdn-images-1.medium.com/max/1024/1*vgjXbl6ec2hHSQzjdGoQhg.png",
+      "article": "https://medium.com/@erfanzn777/revolutionizing-installments-a-case-study-in-transforming-static-options-into-dynamic-solutions-04057b1d3cad",
+      "title": "Case Study: Transforming Static Options into Dynamic Solutions",
+      "summary": "Replaced static installment options with adjustable down payments and monthly payments within financing constraints.",
+      "metrics": [
+        [
+          "+14%",
+          "installment requests"
+        ],
+        [
+          "−4 min",
+          "average call per request"
+        ]
+      ]
+    }
+  ],
+  "experience_source": "LinkedIn screenshots supplied by Erfan; APM concurrent role and Discovery focus corrected by Erfan.",
+  "portrait_source": "Portrait supplied by Erfan, September 24, 2026."
+}

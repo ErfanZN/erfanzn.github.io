@@ -1,54 +1,78 @@
 (() => {
-  const header = document.querySelector('.site-header');
-  const updateHeader = () => header?.classList.toggle('scrolled', window.scrollY > 12);
-  window.addEventListener('scroll', updateHeader, { passive: true });
-  updateHeader();
-
-  const tabs = [...document.querySelectorAll('[role="tab"][data-step]')];
-  function selectTab(tab, moveFocus = false) {
-    tabs.forEach(item => {
-      const active = item === tab;
-      item.setAttribute('aria-selected', String(active));
-      item.tabIndex = active ? 0 : -1;
-      const panel = document.getElementById(item.getAttribute('aria-controls'));
-      if (panel) panel.hidden = !active;
-    });
-    if (moveFocus) tab.focus();
+  if (new URLSearchParams(location.search).get('review') === '1') {
+    const review = document.createElement('script'); review.src = '/review.js'; document.head.append(review);
   }
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => selectTab(tab));
-    tab.addEventListener('keydown', event => {
-      let next;
-      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length - 1;
-      if (next !== undefined) { event.preventDefault(); selectTab(tabs[next], true); }
-    });
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const hero = document.querySelector('.hero');
+  hero?.addEventListener('pointermove', e => {
+    if (reduced.matches || e.pointerType !== 'mouse') return;
+    const r = hero.getBoundingClientRect();
+    hero.style.setProperty('--photo-x', `${(e.clientX / r.width - .5) * 12}px`);
+    hero.style.setProperty('--photo-y', `${((e.clientY-r.top) / r.height - .5) * 8}px`);
   });
-
-  function openLinkedExperience(hash) {
-    if (!hash) return;
-    const target = document.getElementById(hash.replace(/^#/, ''));
-    if (target instanceof HTMLDetailsElement) target.open = true;
+  hero?.addEventListener('pointerleave', () => {hero.style.setProperty('--photo-x','0px');hero.style.setProperty('--photo-y','0px');});
+  const motion = document.querySelector('#marquee-toggle');
+  let paused = false;
+  function updateMotion() {
+    document.querySelector('.company-section').classList.toggle('paused', paused || reduced.matches);
+    motion.setAttribute('aria-pressed', String(paused || reduced.matches));
+    motion.textContent = reduced.matches ? 'Motion reduced' : paused ? 'Resume motion ▷' : 'Pause motion Ⅱ';
+    motion.disabled = reduced.matches;
   }
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', () => openLinkedExperience(link.hash));
+  motion?.addEventListener('click', () => {paused = !paused;updateMotion();});
+  reduced.addEventListener('change', updateMotion); if(motion)updateMotion();
+  document.querySelector('#simplify')?.addEventListener('click', e => {
+    const button=e.currentTarget, clear=button.getAttribute('aria-pressed')!=='true';
+    button.setAttribute('aria-pressed',String(clear));
+    document.querySelector('.signal-playground').classList.toggle('is-clear',clear);
+    document.querySelector('#signal-state').textContent=clear?'A clear path forward':'Untangle the problem';
+    button.innerHTML=clear?'Explore again <span aria-hidden="true">↺</span>':'Find clarity <span aria-hidden="true">↗</span>';
+    document.querySelector('#signal').setAttribute('aria-label',clear?'A clear path connects Problem, Decision, and Impact.':'A tangle of lines that can be simplified into a clear path.');
   });
-  window.addEventListener('hashchange', () => openLinkedExperience(location.hash));
-  openLinkedExperience(location.hash);
-
-  if ('IntersectionObserver' in window) {
-    const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach(link => {
-          if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
-        });
-      });
-    }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
-    navLinks.forEach(link => { const section = document.getElementById(link.hash.slice(1)); if (section) observer.observe(section); });
+  if ('IntersectionObserver' in window && !reduced.matches) {
+    const observer = new IntersectionObserver(entries => entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('reveal');observer.unobserve(entry.target);}
+    }),{threshold:.12});
+    document.querySelectorAll('.section-heading,.case-card,.origin-story').forEach(el=>observer.observe(el));
   }
+  const form=document.querySelector('#contact-form'); if(!form)return;
+  const fields=['name','email','message']; const status=document.querySelector('#form-status');
+  const send=form.querySelector('[type="submit"]'); let sending=false, dirty=false;
+  const setError=(name,text)=>{const field=form.elements[name];field.setAttribute('aria-invalid',String(!!text));document.querySelector(`#${name}-error`).textContent=text;};
+  form.addEventListener('input',e=>{
+    dirty=true;
+    if(fields.includes(e.target.name))setError(e.target.name,'');
+    if(e.target.tagName==='TEXTAREA'){e.target.style.height='auto';e.target.style.height=`${Math.min(e.target.scrollHeight,400)}px`;}
+  });
+  window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+  form.addEventListener('submit',async e=>{
+    e.preventDefault(); if(sending || form.elements._honey.value)return;
+    let first;
+    fields.forEach(name=>{
+      const field=form.elements[name],value=field.value.trim();
+      let error=!value?({name:'Please enter your name.',email:'Please enter your email address.',message:'Please add a message.'}[name]):'';
+      if(name==='email'&&value&&!field.validity.valid)error='Enter a valid email address, like you@company.com.';
+      if(value.length>field.maxLength)error=`Please use ${field.maxLength} characters or fewer.`;
+      setError(name,error);if(error&&!first)first=field;
+    });
+    if(first){first.focus();return;}
+    if(!navigator.onLine){status.className='form-status error';status.textContent='You’re offline. Reconnect and send again. Your message is still here.';return;}
+    sending=true;send.disabled=true;form.setAttribute('aria-busy','true');send.querySelector('.send-label').textContent='Sending…';status.className='form-status';status.textContent='Sending your message…';
+    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
+    try{
+      const response=await fetch('https://formsubmit.co/ajax/erfanzn777@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:form.elements.name.value.trim(),email:form.elements.email.value.trim(),message:form.elements.message.value.trim(),_subject:'New message from Erfan’s portfolio',_template:'table',_url:location.origin+location.pathname}),signal:controller.signal});
+      const data=await response.json();
+      if(!response.ok||!(data.success===true||data.success==='true'))throw new Error('service');
+      if(/activat|confirm.*email|verify/i.test(data.message||'')){
+        status.className='form-status error';status.textContent='Email delivery is awaiting activation. Please use the email link to contact Erfan directly. Your message is still here.';
+      }else{
+        dirty=false;form.reset();form.elements.message.style.height='';status.textContent='Message submitted. Thank you for reaching out.';
+        const dialog=document.querySelector('#sent-dialog');dialog.showModal();
+      }
+    }catch(error){status.className='form-status error';status.textContent=error.name==='AbortError'?'Delivery could not be confirmed. Your message is still here. Try again, or use the email link.':'Your message could not be sent. Please try again or use the email link. Your message is still here.';}
+    finally{clearTimeout(timer);sending=false;send.disabled=false;form.removeAttribute('aria-busy');send.querySelector('.send-label').textContent='Send message';}
+  });
+  const dialog=document.querySelector('#sent-dialog');
+  document.querySelector('#close-sent').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>send.focus());
 })();
