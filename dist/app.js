@@ -7,8 +7,8 @@
   hero?.addEventListener('pointermove', e => {
     if (reduced.matches || e.pointerType !== 'mouse') return;
     const r = hero.getBoundingClientRect();
-    hero.style.setProperty('--photo-x', `${(e.clientX / r.width - .5) * 12}px`);
-    hero.style.setProperty('--photo-y', `${((e.clientY-r.top) / r.height - .5) * 8}px`);
+    hero.style.setProperty('--photo-x', `${Math.round((e.clientX / r.width - .5) * 12)}px`);
+    hero.style.setProperty('--photo-y', `${Math.round(((e.clientY-r.top) / r.height - .5) * 8)}px`);
   });
   hero?.addEventListener('pointerleave', () => {hero.style.setProperty('--photo-x','0px');hero.style.setProperty('--photo-y','0px');});
   const motion = document.querySelector('#marquee-toggle');
