@@ -16,6 +16,13 @@
           "14 days",
           "focused calendar view"
         ]
+      ],
+      "cover_treatment": "Original UI screens cropped with SVG viewBox and composed inside shared CSS device mockups. Screen content is not regenerated.",
+      "mockup_sources": [
+        {
+          "image": "/assets/cases/shab-calendar.png",
+          "source_image": "https://cdn-images-1.medium.com/max/1024/1*WYbt0Vp0nKAngjQ0UGeXlw.png"
+        }
       ]
     },
     {
@@ -34,6 +41,13 @@
           "+20%",
           "successful sales cases / day"
         ]
+      ],
+      "cover_treatment": "Original UI screens cropped with SVG viewBox and composed inside shared CSS device mockups. Screen content is not regenerated.",
+      "mockup_sources": [
+        {
+          "image": "/assets/cases/car-sell.png",
+          "source_image": "https://cdn-images-1.medium.com/max/1024/1*ZlVmoCfzf3LYX9kGFXH7eQ.png"
+        }
       ]
     },
     {
@@ -52,6 +66,17 @@
           "−27%",
           "operating costs"
         ]
+      ],
+      "cover_treatment": "Original UI screens cropped with SVG viewBox and composed inside shared CSS device mockups. Screen content is not regenerated.",
+      "mockup_sources": [
+        {
+          "image": "/assets/cases/assistant-budget.png",
+          "source_image": "https://cdn-images-1.medium.com/max/552/0*d5dAKBMsN0kleI5C.png"
+        },
+        {
+          "image": "/assets/cases/assistant-results.png",
+          "source_image": "https://cdn-images-1.medium.com/max/558/0*JgTfhnKX77r-zp10.png"
+        }
       ]
     },
     {
@@ -70,6 +95,13 @@
           "5 → 2 days",
           "average time to sell"
         ]
+      ],
+      "cover_treatment": "Original UI screens cropped with SVG viewBox and composed inside shared CSS device mockups. Screen content is not regenerated.",
+      "mockup_sources": [
+        {
+          "image": "/assets/cases/market-offer.png",
+          "source_image": "https://cdn-images-1.medium.com/max/1024/1*l8XBj0r7W-iCEimRvIFtZg.png"
+        }
       ]
     },
     {
@@ -88,6 +120,13 @@
           "+16 px",
           "control height and spacing"
         ]
+      ],
+      "cover_treatment": "Original UI screens cropped with SVG viewBox and composed inside shared CSS device mockups. Screen content is not regenerated.",
+      "mockup_sources": [
+        {
+          "image": "/assets/cases/dynamic-context.png",
+          "source_image": "https://cdn-images-1.medium.com/max/1024/1*DZ84kAcGQ5u9tLyydAwCVg.png"
+        }
       ]
     },
     {
@@ -106,6 +145,13 @@
           "−4 min",
           "average call per request"
         ]
+      ],
+      "cover_treatment": "Original UI screens cropped with SVG viewBox and composed inside shared CSS device mockups. Screen content is not regenerated.",
+      "mockup_sources": [
+        {
+          "image": "/assets/cases/installments.png",
+          "source_image": "https://cdn-images-1.medium.com/max/1024/1*vgjXbl6ec2hHSQzjdGoQhg.png"
+        }
       ]
     }
   ],

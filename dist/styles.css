@@ -59,3 +59,40 @@
 @media(max-width:700px){:root{--text-section:38px;--text-card:28px}.site-header nav{display:none}.site-header{justify-content:space-between}.hero{padding-top:360px;min-height:0;padding-bottom:110px}.hero-content{width:100%}.hero-intro{margin:0 0 20px;gap:5px}.hero-name{font-size:22px}.hero-role{font-size:var(--text-small)}.hero-photo{height:520px}.hero-photo:after{background:linear-gradient(90deg,#08080840,transparent 60%),linear-gradient(0deg,var(--bg),transparent 55%)}.hero:after{background:linear-gradient(90deg,#08080855,transparent 100%)}.hero-description{font-size:var(--text-body)}.hero-crosshair{display:none}.hero-bottom{font-size:10px;bottom:24px}.hero-bottom a{font-size:var(--text-label)}.case-grid{gap:28px}.case-image{padding:12px;gap:12px}.cover-heading>span:last-child{display:inline}.cover-heading{font-size:11px}.case-link{padding:10px}.case-body{padding:20px 10px 10px}.case-description{font-size:var(--text-body);margin-top:12px}.case-body .eyebrow{font-size:11px}.case-body h3{margin-top:10px}.case-metrics{margin-top:18px;padding:16px 0;gap:12px}.case-metrics strong{font-size:28px}.case-metrics span{font-size:var(--text-label)}.read-more{margin-top:18px;font-size:var(--text-small)}.company-label{font-size:var(--text-label);gap:12px}.text-button{font-size:11px;white-space:nowrap}.career-date{font-size:var(--text-label)}.career-title{font-size:var(--text-small)}.career-content>.eyebrow{font-size:11px}.role-heading>span{font-size:var(--text-label)}.origin-story{display:grid;grid-template-columns:1fr;gap:26px;margin-top:40px;padding-top:36px}.origin-header{grid-column:auto}.origin-header h2{font-size:var(--text-section)}.origin-image{position:static}.origin-copy>.story-lead{font-size:24px}.origin-copy>p{font-size:var(--text-body);line-height:1.7}.signal-top{flex-direction:column}.approach-tags span{font-size:var(--text-label)}.contact-copy>p:not(.eyebrow){font-size:var(--text-body)}}
 @media(max-width:370px){:root{--text-card:25px;--text-section:34px}.hero{padding-top:330px}.hero-intro{margin-bottom:18px}.hero-name{font-size:22px}.hero-photo{height:480px}.case-body{padding-left:6px;padding-right:6px}.case-metrics strong{font-size:25px}.cover-heading>span:last-child{display:none}.company-label>span{max-width:130px}.origin-copy>.story-lead{font-size:22px}.story-milestones{gap:12px}}
 @media(prefers-reduced-motion:reduce){.case-link:hover .cover-art>img{transform:none}}
+/* Unified project mockups and shared control geometry. */
+:root{--control-radius:8px;--cover-stage:#202124;--cover-light:#383a3e}
+.button,.header-contact,.read-more,.more-work>summary,.field input,.field textarea{border-radius:var(--control-radius)}
+.company-section{padding:32px 0}.marquee{margin-top:0}
+.case-link{padding:0}.case-image{display:block;padding:0;border:0;border-bottom:1px solid var(--line);border-radius:0;aspect-ratio:1.68;background:radial-gradient(ellipse at 50% 5%,var(--cover-light),var(--cover-stage) 65%)}
+.case-body{padding:26px 28px 28px}.case-card{border-radius:12px}
+.mockup-stage{position:absolute;inset:0;perspective:1200px;isolation:isolate}
+.mockup-stage:after{content:"";position:absolute;left:12%;right:12%;bottom:3%;height:10%;background:#000;filter:blur(16px);opacity:.45;z-index:-1;border-radius:50%}
+.mockup{position:absolute;background:linear-gradient(135deg,#a4a5a8,#343538 22%,#0c0c0d 70%,#757679);padding:4px;border-radius:12px;border:1px solid #a3a4a7;box-shadow:6px 12px 20px #0007,0 0 0 2px #111;transition:transform .6s var(--ease)}
+.mockup-screen{overflow:hidden;border-radius:8px;background:#fff;width:100%;height:100%}
+.mockup-screen svg{width:100%;height:100%;display:block}
+.phone{height:80%;aspect-ratio:var(--screen-ratio);top:10%;left:23%;transform:rotate(-7deg)}
+.phone:nth-child(2){left:auto;right:23%;transform:rotate(7deg) translateY(2%)}
+.case-link:hover .phone:first-child{transform:rotate(-4deg) translateY(-2%)}
+.case-link:hover .phone:nth-child(2){transform:rotate(4deg)}
+.browser{width:74%;aspect-ratio:var(--screen-ratio);left:16%;top:18%;padding:15px 4px 4px;border-radius:8px;transform:rotate(-5deg)}
+.browser:before{content:"•••";letter-spacing:2px;position:absolute;top:-6px;left:8px;color:#b1b1b1;font-size:17px}
+.browser .mockup-screen{border-radius:2px}
+.phone.companion{height:67%;left:10%;right:auto;top:26%;transform:rotate(5deg)}
+.case-link:hover .phone.companion{transform:rotate(2deg) translateY(-2%)}
+.mockup-label{position:absolute;left:0;right:0;bottom:-28px;text-align:center;font-family:var(--body);font-size:12px;color:var(--ink);font-weight:500}
+.dynamic-usability .phone{height:74%;top:8%}
+.about-copy>p:not(.eyebrow){margin-top:20px}.signal-playground{align-self:center}
+.approach-tags span{border-radius:var(--control-radius)}
+#contact-form{padding-top:0;display:grid;grid-template-columns:minmax(0,1fr);row-gap:8px;align-content:start}
+.field{margin:0}.field label{margin-bottom:8px;font-size:var(--text-small);line-height:1.5;font-weight:500}
+.field input,.field textarea{display:block;padding:14px 16px;min-height:54px}
+.field textarea{min-height:156px}
+.field-error{min-height:18px;line-height:18px;margin-top:4px;font-size:var(--text-label)}
+.send-button{min-height:54px;margin-top:0;padding:14px 20px}
+.form-note{max-width:none;margin-top:4px;line-height:1.6}
+.form-status{margin-top:0;min-height:18px;line-height:18px}
+#form-status:empty{min-height:0;height:0;margin:0}
+.form-status:not(:empty){padding:12px 0 0;min-height:30px}
+@media(max-width:1000px){.case-body{padding:22px}.phone{left:22%}.phone:nth-child(2){right:22%}.phone.companion{left:10%;right:auto}.contact-section{gap:48px}}
+@media(max-width:700px){.company-section{padding:28px 0}.case-body{padding:22px 20px 20px}.mockup{padding:3px;border-radius:9px}.mockup-screen{border-radius:6px}.browser{padding:12px 3px 3px;border-radius:6px}.browser:before{top:-7px;font-size:15px}.mockup-label{font-size:11px;bottom:-24px}.about-copy>p:not(.eyebrow){margin-top:20px}#contact-form{margin-top:40px}.signal-playground{margin-top:32px}}
+@media(prefers-reduced-motion:reduce){.case-link:hover .phone:first-child{transform:rotate(-7deg)}.case-link:hover .phone:nth-child(2){transform:rotate(7deg) translateY(2%)}.case-link:hover .phone.companion{transform:rotate(5deg)}}

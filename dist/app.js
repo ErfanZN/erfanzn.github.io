@@ -11,16 +11,6 @@
     hero.style.setProperty('--photo-y', `${Math.round(((e.clientY-r.top) / r.height - .5) * 8)}px`);
   });
   hero?.addEventListener('pointerleave', () => {hero.style.setProperty('--photo-x','0px');hero.style.setProperty('--photo-y','0px');});
-  const motion = document.querySelector('#marquee-toggle');
-  let paused = false;
-  function updateMotion() {
-    document.querySelector('.company-section').classList.toggle('paused', paused || reduced.matches);
-    motion.setAttribute('aria-pressed', String(paused || reduced.matches));
-    motion.textContent = reduced.matches ? 'Motion reduced' : paused ? 'Resume motion ▷' : 'Pause motion Ⅱ';
-    motion.disabled = reduced.matches;
-  }
-  motion?.addEventListener('click', () => {paused = !paused;updateMotion();});
-  reduced.addEventListener('change', updateMotion); if(motion)updateMotion();
   document.querySelector('#simplify')?.addEventListener('click', e => {
     const button=e.currentTarget, clear=button.getAttribute('aria-pressed')!=='true';
     button.setAttribute('aria-pressed',String(clear));

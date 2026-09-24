@@ -13,3 +13,6 @@ The supplied original `dist/assets/erfan-portrait-dark.png` remains unchanged at
 
 ## Case covers
 The original Medium images recorded in `content-sources.json` are unchanged. Shared HTML/CSS adds a consistent frame, aspect ratio, company and topic label around them. No product UI was generated or redrawn.
+
+## Unified case covers
+The six covers are native HTML/CSS device compositions using SVG viewBox crops of original published UI. There is no generated UI or rewritten screenshot text. Additional budget/result, market offer and inspection comparison images were retrieved from the same author’s supplied Medium articles; exact URLs are recorded in content-sources.json. Phone/browser frames and the charcoal scene are CSS, so all covers share one responsive visual system.
