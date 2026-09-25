@@ -16,3 +16,6 @@ The original Medium images recorded in `content-sources.json` are unchanged. Sha
 
 ## Unified case covers
 The six covers are native HTML/CSS device compositions using SVG viewBox crops of original published UI. There is no generated UI or rewritten screenshot text. Additional budget/result, market offer and inspection comparison images were retrieved from the same author’s supplied Medium articles; exact URLs are recorded in content-sources.json. Phone/browser frames and the charcoal scene are CSS, so all covers share one responsive visual system.
+
+## Persian typography
+Self-hosted [Vazirmatn](https://github.com/rastikerdar/vazirmatn), version v33.003, from the official repository: `fonts/webfonts/Vazirmatn[wght].woff2`. Served as `/assets/vazirmatn.woff2`. The SIL Open Font License is included at `/assets/Vazirmatn-OFL.txt`. No external font request is required at runtime.

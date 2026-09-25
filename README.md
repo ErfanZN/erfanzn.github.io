@@ -11,3 +11,16 @@ English, dark-only portfolio. Static source in `dist/`, no build step.
 - `DESIGN.md` records design and interaction decisions.
 
 Review mode stores notes locally in the current browser. Select a part, write a note, save, then copy the notes into the conversation. It does not automatically send notes or edit the website.
+
+## Bilingual editing
+English is served at `/`, Persian at `/fa/`. English content in `dist/index.html` is the shared markup source; Persian text, attributes, and dynamic interface messages live in `locales/fa.json`. Persian copy is an editorial adaptation, not a word-for-word translation. Preserve all factual outcomes and original case-study destinations.
+
+After editing either language, run:
+
+```sh
+python3 scripts/build-locales.py
+python3 scripts/build-locales.py --check
+node tests/contact.cjs
+```
+
+Commit the generated Persian HTML and message script with their source changes. GitHub Actions checks synchronization before publishing. Common layout is in `dist/styles.css`; RTL and Vazirmatn-specific rules are in `dist/fa.css`. Tests simulate contact service responses without sending messages.

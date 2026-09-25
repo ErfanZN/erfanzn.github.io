@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'dist/**'
+      - 'locales/**'
+      - 'scripts/**'
+      - 'tests/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -26,6 +29,12 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+      - name: Verify both languages
+        run: |
+          python3 scripts/build-locales.py --check
+          node --check dist/app.js
+          node --check dist/fa-i18n.js
+          node tests/contact.cjs
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload website
