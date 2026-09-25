@@ -103,6 +103,16 @@
 .language-switch:hover{background:var(--raised)}
 .language-switch:active,.button:active{transform:translateY(1px)}
 @media(max-width:700px){.header-actions{gap:8px}.language-switch{padding:8px 10px;font-size:12px}.site-header{gap:12px}}
+
+/* Keep cards in each desktop row aligned without fixing the overall card height. */
+.case-card{display:flex}
+.case-link{display:flex;flex:1;flex-direction:column;height:100%}
+.case-body{display:flex;flex:1;flex-direction:column}
+.case-description{margin-bottom:20px}
+.case-body .case-metrics{margin-top:auto}
+.case-metrics span{min-height:3.4em}
+.read-more{margin-top:20px}
+@media(max-width:700px){.read-more{margin-top:18px}.case-metrics span{min-height:0}}
 /* Keep the spam trap outside visual flow without extending RTL scroll bounds. */
 .honey{left:0;top:0;clip-path:inset(50%)}
 .language-switch{background:var(--surface)}
@@ -111,4 +121,4 @@
 .header-contact:hover{background:#ffffff12;color:var(--ink);border-color:#ffffff80}
 .header-contact:active{background:#ffffff20}
 
-.language-switch[lang="fa"]{font-family:Vazirmatn,Tahoma,sans-serif;font-size:14px}
+.language-switch{font-family:DM,Arial,sans-serif;min-width:44px;direction:ltr}
