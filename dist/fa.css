@@ -13,7 +13,7 @@ h3,.case-body h3{line-height:1.55}
 .eyebrow{text-transform:none;font-size:12px;line-height:1.75}
 .wordmark{font-family:Bricolage,Arial,sans-serif;letter-spacing:-.08em;direction:ltr}
 .hero{padding-top:154px}.hero-content{max-width:850px}
-@media(min-width:701px){.hero-content{transform:translateY(80px)}}
+@media(min-width:701px){.hero-content{transform:translateY(160px)}}
 .hero-name{font-size:25px;line-height:1.45}.hero-role{line-height:1.65}
 .hero-photo{right:auto;left:-2%}
 .hero-photo:after{background:linear-gradient(270deg,var(--bg) 0%,transparent 40%),linear-gradient(0deg,var(--bg),transparent 24%)}
