@@ -2,12 +2,12 @@
   --display:Vazirmatn,Tahoma,sans-serif;
   --body:Vazirmatn,Tahoma,sans-serif;
   --utility:Vazirmatn,Tahoma,sans-serif;
-  --text-section:clamp(36px,3.7vw,52px);
+  --text-section:clamp(32px,3.1vw,44px);
   --text-card:24px;
 }
 body{font-size:16px;line-height:1.8}
 h1,h2,h3,h4,.eyebrow,.hero-name,.origin-copy>.story-lead,.origin-header h2,.case-body h3,.case-metrics strong,.career-main strong,.role-heading h4,.hero-bottom{letter-spacing:0}
-h1{font-size:clamp(58px,6vw,88px);font-weight:720;line-height:1.28}
+h1{font-size:clamp(48px,5vw,72px);font-weight:720;line-height:1.4}
 h2{line-height:1.42}
 h3,.case-body h3{line-height:1.55}
 .eyebrow{text-transform:none;font-size:12px;line-height:1.75}
@@ -17,7 +17,7 @@ h3,.case-body h3{line-height:1.55}
 .hero-photo{right:auto;left:-2%}
 .hero-photo:after{background:linear-gradient(270deg,var(--bg) 0%,transparent 40%),linear-gradient(0deg,var(--bg),transparent 24%)}
 .hero:after{background:linear-gradient(270deg,var(--bg) 0%,#080808d9 25%,#08080820 62%,transparent 100%)}
-.hero-description{max-width:560px;font-size:17px;line-height:1.85;margin:24px 0}
+.hero-description{max-width:510px;font-size:17px;line-height:1.85;margin:24px 0}
 .hero-crosshair{right:auto;left:6%}
 .hero-bottom a span{margin-left:0;margin-right:32px}
 .current-role>span:last-child{margin-left:0;margin-right:16px}
@@ -42,8 +42,19 @@ h3,.case-body h3{line-height:1.55}
 .signal-top{text-align:right}#signal{direction:ltr}.signal-labels{font-family:Vazirmatn,Tahoma,sans-serif;font-size:14px}
 .origin-header h2{line-height:1.48}.origin-copy>.story-lead{line-height:1.7}
 .story-milestones strong{line-height:1.45}.story-milestones div>span{font-size:12px;line-height:1.8}
-.contact-copy h2{font-size:clamp(44px,4.8vw,68px);line-height:1.48}
-.contact-arrow{line-height:1;margin-top:16px}
+.contact-section{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,88px);align-items:start}
+.contact-copy h2{font-size:clamp(34px,3.2vw,46px);font-weight:650;line-height:1.5;margin-top:18px}
+.contact-copy .outline-word{-webkit-text-stroke:0;color:var(--muted)}
+.contact-copy .contact-arrow{display:none}
+.contact-copy>p:not(.eyebrow){font-size:15px;line-height:1.85;margin:22px 0 24px;max-width:430px}
+.contact-copy .social-links{margin-top:22px}
+#contact-form{row-gap:12px}
+.field label{margin-bottom:8px}
+.field-error:empty{min-height:0;height:0;margin-top:0}
+.field input,.field textarea{font-size:14px}
+.field textarea{min-height:150px}
+.send-button{margin-top:8px}
+.form-note{margin-top:8px}
 .email-link{display:inline-block;direction:ltr;unicode-bidi:isolate;font-family:DM,Arial,sans-serif}
 .field label{font-size:14px;line-height:1.6}
 .field input,.field textarea{font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.75}
@@ -65,15 +76,15 @@ dialog h2{line-height:1.5}dialog>p:not(.eyebrow){line-height:1.8}
   .hero-description{font-size:16px}
 }
 @media(max-width:700px){
-  :root{--text-section:clamp(31px,8.5vw,38px);--text-card:22px}
-  .hero{padding-top:360px}
+  :root{--text-section:clamp(28px,7.6vw,34px);--text-card:22px}
+  .hero{padding-top:clamp(210px,29svh,270px)}
   .hero-photo{left:0;right:auto}
   .hero-photo:after{background:linear-gradient(270deg,#08080840,transparent 60%),linear-gradient(0deg,var(--bg),transparent 55%)}
   .hero:after{background:linear-gradient(270deg,#08080855,transparent 100%)}
-  h1{font-size:clamp(38px,10vw,56px);line-height:1.38}
+  .hero h1{font-size:clamp(32px,8.5vw,42px);line-height:1.5}
   .hero-name{font-size:22px}.hero-role{font-size:13px}
-  .hero-intro{margin-bottom:18px}
-  .hero-description{font-size:15px;line-height:1.85}.hero-description br{display:none}
+  .hero-intro{margin-bottom:12px}
+  .hero-description{font-size:14px;line-height:1.8;margin:14px 0 18px}.hero-description br{display:none}
   .header-contact{font-size:12px;padding:9px 12px;gap:12px}
   .language-switch{font-family:DM,Arial,sans-serif}
   .section-heading h2,.about-copy h2{font-size:var(--text-section)}
@@ -88,15 +99,17 @@ dialog h2{line-height:1.5}dialog>p:not(.eyebrow){line-height:1.8}
   .career-content{padding-right:60px;padding-left:0;font-size:14px}
   .career-main strong{font-size:21px}.career-title{font-size:12px}
   .role-heading h4{font-size:15px}
-  .contact-copy h2{font-size:clamp(38px,11vw,52px);line-height:1.5}
+  .contact-section{display:block}
+  .contact-copy h2{font-size:32px;line-height:1.5}
+  #contact-form{margin-top:32px}
   .origin-copy>.story-lead{font-size:22px}.origin-header h2{font-size:var(--text-section)}
   .hero-bottom{font-size:10px;line-height:1.7}.hero-bottom a{align-self:flex-start}
   .story-milestones>span{font-size:24px}
 }
 @media(max-width:370px){
   :root{--text-card:21px;--text-section:29px}
-  .hero{padding-top:330px}.hero-name{font-size:21px}h1{font-size:36px}
+  .hero-name{font-size:21px}
   .case-body{padding:18px}.case-metrics strong{font-size:22px}
-  .career-content{padding-right:0}.contact-copy h2{font-size:40px}
+  .career-content{padding-right:0}.contact-copy h2{font-size:30px}
   .story-milestones div>span{font-size:11px}
 }

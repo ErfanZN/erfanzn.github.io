@@ -22,12 +22,15 @@
     hero.style.setProperty('--photo-y', `${Math.round(((e.clientY-r.top) / r.height - .5) * 8)}px`);
   });
   hero?.addEventListener('pointerleave', () => {hero.style.setProperty('--photo-x','0px');hero.style.setProperty('--photo-y','0px');});
+  const knotPrompts = ['Find clarity', 'Find the signal', 'Connect the dots', 'Make room for clarity', 'Untangle the next step'];
+  let knotRound = 0;
   document.querySelector('#simplify')?.addEventListener('click', e => {
     const button=e.currentTarget, clear=button.getAttribute('aria-pressed')!=='true';
     button.setAttribute('aria-pressed',String(clear));
     document.querySelector('.signal-playground').classList.toggle('is-clear',clear);
     document.querySelector('#signal-state').textContent=clear?t('A clear path forward'):t('Untangle the problem');
-    button.innerHTML=clear?t('Explore again')+' <span aria-hidden="true">↺</span>':t('Find clarity')+' <span aria-hidden="true">↗</span>';
+    if (!clear) knotRound = (knotRound + 1) % knotPrompts.length;
+    button.innerHTML=clear?t('Explore again')+' <span aria-hidden="true">↺</span>':t(knotPrompts[knotRound])+' <span aria-hidden="true">↗</span>';
     document.querySelector('#signal').setAttribute('aria-label',clear?t('A clear path connects Problem, Decision, and Impact.'):t('A tangle of lines that can be simplified into a clear path.'));
   });
   if ('IntersectionObserver' in window && !reduced.matches) {

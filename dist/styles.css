@@ -122,3 +122,20 @@
 .header-contact:active{background:#ffffff20}
 
 .language-switch{font-family:DM,Arial,sans-serif;min-width:44px;direction:ltr}
+
+/* Keep the primary action inside the first mobile viewport in both locales. */
+@media(max-width:700px){
+  .hero{padding-top:clamp(210px,29svh,270px);padding-bottom:88px;min-height:0;height:auto}
+  .hero-photo{height:calc(clamp(210px,29svh,270px) + 140px)}
+  .hero-photo img{object-position:50% 20%}
+  .hero-intro{margin-bottom:12px;gap:3px}
+  .hero-name{font-size:22px;line-height:1.25}
+  .hero-role{font-size:12px;line-height:1.5}
+  .hero h1{font-size:clamp(43px,10.8vw,62px);line-height:1.05}
+  .hero-description{font-size:14px;line-height:1.65;margin:16px 0;max-width:400px}
+  .hero .button{min-height:50px;padding:12px 20px}
+  .current-role{margin-top:22px;font-size:12px}
+  .current-role small{font-size:11px}
+  .hero-bottom{bottom:20px;gap:8px}
+}
+#simplify{width:min(100%,300px);justify-content:space-between;min-height:56px}

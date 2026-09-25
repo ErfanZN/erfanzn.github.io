@@ -2,8 +2,8 @@
 (() => {
   const copy = {
   "A clear path forward": "راه پیش رو روشن شد",
-  "Untangle the problem": "از میان پیچیدگی‌ها، راه را پیدا کن",
-  "Explore again": "دوباره امتحان کن",
+  "Untangle the problem": "مسیر در میان گره‌هاست",
+  "Explore again": "یک مسئلهٔ دیگر",
   "Find clarity": "مسیر را روشن کن",
   "A clear path connects Problem, Decision, and Impact.": "مسیری روشن، مسئله را به تصمیم و اثر متصل می‌کند.",
   "A tangle of lines that can be simplified into a clear path.": "خط‌های درهم‌تنیده‌ای که می‌توان آن‌ها را به مسیری روشن تبدیل کرد.",
@@ -19,7 +19,11 @@
   "Message submitted. Thank you for reaching out.": "پیامتان ثبت شد. ممنون که نوشتید.",
   "Delivery could not be confirmed. Your message is still here. Try again, or use the email link.": "نتیجهٔ ارسال مشخص نشد. متن پیام محفوظ است؛ دوباره تلاش کنید یا از لینک ایمیل استفاده کنید.",
   "Your message could not be sent. Please try again or use the email link. Your message is still here.": "پیام ارسال نشد. دوباره تلاش کنید یا از لینک ایمیل استفاده کنید. متن پیام شما محفوظ است.",
-  "Send message": "ارسال پیام"
+  "Send message": "ارسال پیام",
+  "Find the signal": "نقطهٔ تمرکز را پیدا کن",
+  "Connect the dots": "ارتباط‌ها را پیدا کن",
+  "Make room for clarity": "راه را باز کن",
+  "Untangle the next step": "قدم بعدی را مشخص کن"
 };
   window.portfolioTranslate = (text, values = {}) => (copy[text] || text).replace(/\{(\w+)\}/g, (_, key) => typeof values[key] === 'number' ? values[key].toLocaleString('fa-IR') : (values[key] ?? ''));
 })();
