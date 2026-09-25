@@ -54,8 +54,8 @@ class PersianPage(HTMLParser):
         if tag == 'script' and a.get('src') == '/app.js':
             self.parts.append('<script defer src="/fa-i18n.js"></script>')
         self.parts.append('<' + tag + ''.join(' ' + k + ('="' + escape(v, quote=True) + '"' if v is not None else '') for k, v in a.items()) + '>')
-        if tag == 'link' and a.get('href') == '/styles.css':
-            self.parts.append('<link rel="stylesheet" href="/fa.css">')
+        if tag == 'link' and a.get('href', '').split('?', 1)[0] == '/styles.css':
+            self.parts.append('<link rel="stylesheet" href="/fa.css?v=20260925-2">')
 
     def handle_endtag(self, tag):
         self.parts.append('</' + tag + '>')
