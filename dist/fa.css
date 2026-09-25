@@ -78,7 +78,7 @@ dialog h2{line-height:1.5}dialog>p:not(.eyebrow){line-height:1.8}
 }
 @media(max-width:700px){
   :root{--text-section:clamp(28px,7.6vw,34px);--text-card:22px}
-  .hero{padding-top:clamp(230px,32svh,290px)}
+  .hero{padding-top:clamp(380px,46svh,420px)}
   .hero-photo{left:0;right:auto}
   .hero-photo:after{background:linear-gradient(270deg,#08080840,transparent 60%),linear-gradient(0deg,var(--bg),transparent 55%)}
   .hero:after{background:linear-gradient(270deg,#08080855,transparent 100%)}
