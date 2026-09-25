@@ -125,7 +125,7 @@
 
 /* Keep the primary action inside the first mobile viewport in both locales. */
 @media(max-width:700px){
-  .hero{padding-top:clamp(230px,32svh,290px);padding-bottom:88px;min-height:0;height:auto}
+  .hero{padding-top:clamp(380px,46svh,420px);padding-bottom:88px;min-height:0;height:auto}
   .hero-photo{height:calc(clamp(230px,32svh,290px) + 140px)}
   .hero-photo img{object-position:50% 20%}
   .hero-intro{margin-bottom:12px;gap:3px}
